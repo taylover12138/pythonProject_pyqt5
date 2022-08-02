@@ -6,7 +6,6 @@ from PyQt5.QtWidgets import QMainWindow,QApplication,QDesktopWidget
 class centerWin(QMainWindow):
     def __init__(self):
         super(centerWin,self).__init__()
-
         #设置主窗口应用
         self.setWindowTitle('窗口应用居中')
         #设置窗口尺寸
