@@ -4,7 +4,7 @@
 Qlable常用事件：
 1. 当鼠标划过Qlable时触发：LinkHovered
 2. 当鼠标点击Qlable时出发：LinkActivated
-待解决：setAlignment()没有用
+
 '''
 import sys
 from PyQt5.QtWidgets import QWidget, QApplication, QHBoxLayout, QLabel, QMainWindow, QVBoxLayout
@@ -27,8 +27,7 @@ class qlabel(QWidget):
         palette = QPalette()
         palette.setColor(QPalette.Window,QtCore.Qt.blue)#设置背景色
         label1.setPalette(palette)
-
-        label1.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)#对其方式排列剧中
+        label1.setAlignment(QtCore.Qt.AlignCenter)#对其方式排列剧中
 
         label2.setText("<a href='#'>欢迎使用Python GUI程序</a>")
 
@@ -52,6 +51,8 @@ class qlabel(QWidget):
         #信号与槽
         label2.linkHovered.connect(self.linkHovered)
         label4.linkActivated.connect(self.linkClicked)
+        self.setLayout(vbox)
+        self.setWindowTitle('QLabel')
     def linkHovered(self):
         print("当鼠标滑过label2时，触发事件")
     def linkClicked(self):
